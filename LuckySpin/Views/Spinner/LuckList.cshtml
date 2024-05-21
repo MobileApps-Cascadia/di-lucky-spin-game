@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LuckySpin.Models.Spin>
+@{
+    Layout = "_Layout";
+}
+<h1>All Your Luck</h1>
+<table>
+    <thead><tr><th>Name</th><th>Luck</th><th>Result</th></tr></thead>
+    <tbody>
+        @if (Model != null){
+             foreach( LuckySpin.Models.Spin spin in @Model ){
+            <tr><td>@spin.Player.FirstName</td><td>@spin.Player.Luck</td><td>@spin.IsWinning</td></tr>
+            }
+        } else {
+            <h1>Repository is not working yet!</h1>
+        }
+    </tbody>
+</table>
